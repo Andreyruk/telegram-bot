@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-master.yaml
+  - changeSet:
+      id: 1
+      author: andrew
+      changes:
+        - createTable:
+            tableName: notification_task
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: chat_id
+                  type: BIGINT
+              - column:
+                  name: notification
+                  type: text
+              - column:
+                  name: send_date
+                  type: timestamp
